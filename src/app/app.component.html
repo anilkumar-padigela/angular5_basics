@@ -1,0 +1,21 @@
+<app-header></app-header>
+<hr>
+<h3>Technologies</h3>
+<ul>
+  <li *ngFor = "let technology of technologies">{{technology}}</li>
+</ul>
+<!--<p *ngIf="child.current">Added item is {{child.current}}</p>-->
+
+
+
+<div style="display: inline-block">
+<!--<app-child [title]="headings[0]" [items]="childdata[0]" #child></app-child>
+   <app-child  [title]="headings[1]" [items]="childdata[1]"></app-child>
+  <app-child  [title]="headings[2]" [items]="childdata[2]"></app-child>-->
+  <app-child *ngFor = "let x of [0,1,2]"  [title]="headings[x]" [items]="childdata[x]" (send)="receiveItem($event,x)" ></app-child>
+
+</div>
+
+<br>
+
+<app-footer></app-footer>
